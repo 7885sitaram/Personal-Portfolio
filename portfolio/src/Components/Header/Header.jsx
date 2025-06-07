@@ -16,6 +16,16 @@ const Header = () => {
         setIsVisible(!isVisible);
     };
 
+
+    function closeMenu(){
+
+        let menu = document.querySelector('.menu');
+
+        menu.setAttribute("hidden", "hidden");
+        
+        
+    }
+
     return (
         <>
             <header>
@@ -117,7 +127,7 @@ const Header = () => {
                 {/* drop-down menu */}
 
                 {isVisible && (
-                    <div>
+                    <div className="menu ">
                         <div className="w-full flex justify-end fixed  top-0 right-0 z-10">
                         
                             <div className="py-4 border-3 border-[#20f6a733]  bg-[#0A1223] flex flex-col  w-[260px] h-screen ">
@@ -128,7 +138,7 @@ const Header = () => {
 
                                 <div>
                                     <ul className="flex flex-col">
-                                        <li className="px-[24px] py-[9px] hover:bg-[#0E262F] hover:text-[#0ff6b4]">
+                                        <li onClick={closeMenu} className="px-[24px] py-[9px] hover:bg-[#0E262F] hover:text-[#0ff6b4]">
                                             <NavLink
 
                                                 to="/"
@@ -140,7 +150,7 @@ const Header = () => {
                                             </NavLink>
                                         </li>
 
-                                        <li className="px-[24px] py-[9px] hover:bg-[#0E262F] ">
+                                        <li onClick={closeMenu} className="px-[24px] py-[9px] hover:bg-[#0E262F] ">
                                             <NavLink
 
                                                 to="/resume"
@@ -154,16 +164,15 @@ const Header = () => {
                                         </li>
 
 
-                                        <li className="px-[24px] py-[9px] hover:bg-[#0E262F]">
-                                            <NavLink
-
-                                                to="/portfolio"
-                                                className={({ isActive }) =>
-                                                    `block py-2 pr-4  duration-200 ${isActive ? "text-[#0ff6b4]" : "text-white"} border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#0ff6b4] lg:p-0`
-                                                }
-                                            >
-                                              <h2 className="text-lg">Portfolio</h2>
-                                            </NavLink>
+                                        <li onClick={closeMenu} className="px-[24px] py-[9px] hover:bg-[#0E262F]">
+                                             <NavLink
+                                        to="/portfolio/all"
+                                        className={`block py-2 pr-4  duration-200 ${isPortfolioActive ? "text-[#0ff6b4]" : "text-[#fafafc]"
+                                            } border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-[#0ff6b4] lg:p-0`}
+                                    >
+                                    
+                                         <h2 className="text-lg">Portfolio</h2>
+                                    </NavLink>
                                         </li>
 
                                         {/* <li className="px-[24px] py-[12px]  hover:bg-[#0E262F] ">
@@ -178,7 +187,7 @@ const Header = () => {
                                             </NavLink>
                                         </li> */}
 
-                                        <li className="px-[24px] py-[9px]  hover:bg-[#0E262F] ">
+                                        <li onClick={closeMenu} className="px-[24px] py-[9px]  hover:bg-[#0E262F] ">
                                             <NavLink
 
                                                 to="/testimonial"
@@ -191,7 +200,7 @@ const Header = () => {
                                         </li>
 
 
-                                        <li className="px-[24px] py-[9px]  hover:bg-[#0E262F] ">
+                                        <li onClick={closeMenu} className="px-[24px] py-[9px]  hover:bg-[#0E262F] ">
                                             <NavLink
 
                                                 to="/contact"

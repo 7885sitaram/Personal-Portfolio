@@ -5,14 +5,9 @@ import Profile from "../Profile/Profile";
 import AnimatedBackground from "../Bg-Styles/AnimatedBackground";
 import { Link, NavLink } from "react-router-dom"
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { useState } from "react";
-
 
 const Portfolio_layout = () => {
 
-    
 
     return (
         <>
@@ -82,8 +77,6 @@ const Portfolio_layout = () => {
                                                 <h1 className="text-xl">Web Design</h1>
                                             </NavLink>
                                         </li>
-
-
 
 
                                     </ul>
